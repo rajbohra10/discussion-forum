@@ -1,0 +1,46 @@
+<script>
+        $.ajax({
+            url : "api/category",
+            type : "post", 
+            dataType: "json",
+            success : function(list){
+                console.log(list);
+                list.forEach(function(obj, index) {
+                    "<li>"+obj.catname+"</li>"
+                });
+            }
+        });
+</script>
+
+<!-- $(window).ready(function(e) {
+            $.ajax({
+                url : "CR_QuickLookData.php",
+                type : "post", 
+                dataType: "json",
+                success : function(list){           
+                    var divCol  = "<div class='col-sm-4 col-md-4'>";
+                    var divWell = "<div class='well' style='position:relative'>";
+                    var divClose = "</div>";
+
+                    list.forEach(function(obj, index) {
+                        var title     = "<h5>"      + obj.title    + "</h5>";
+                        var linkStart = "<a href='" + obj.imagePath + "' rel='lightbox' title='" + obj.title + "'>"
+                        var image     = "<img data-toggle='tooltip' data-placement='left' class='wellImg' title='Click to enlarge image' src='" + obj.imagePath + "'/>"
+                        var desc      = "<p>"       + obj.desc + "</p>";
+                        var linkEnd   = "</a>";
+
+                        var div = divCol    +
+                        divWell     +
+                        title       +
+                        linkStart        +
+                        image       +
+                        desc +
+                        linkEnd     +
+                        divClose +
+                        divClose;
+
+                        $("#CR").append(div); // insert the div you've just created
+                    });
+                }
+            });
+        }); -->
